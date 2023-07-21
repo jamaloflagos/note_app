@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, TextField, Button, Typography, InputLabel, MenuItem, Select, FormControl } from "@mui/material"
+import { Box, TextField, Button, InputLabel, MenuItem, Select, FormControl } from "@mui/material"
 import { useUserContext } from "../hooks/useUserContext"
 import { useNoteContext } from "../hooks/useNoteContext"
 import '@fontsource/roboto/300.css';
@@ -22,7 +22,7 @@ const EditNote = ({ShowEditInput, id, editTitle, editContent, editCategory}) => 
         setTitle(editTitle);
         setContent(editContent);
         setCategory(editCategory);
-    }, [editTitle, editContent]);
+    }, [editTitle, editContent, editCategory]);
 
     const handleNoteEdit = async (e) => {
         e.preventDefault()

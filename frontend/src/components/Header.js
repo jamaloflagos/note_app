@@ -7,14 +7,12 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import { useState } from "react";
 import { useCreateNoteInputContext } from "../hooks/useCreateNoteInputContext";
 
 
 const Header = () => {
     const {logout} = useLogout()
     const {user} = useUserContext()
-    // const [showCreateNoteInput, setShowCreateNoteInput] = useState(false)
     const {showCreateNoteInput, setShowCreateNoteInput} = useCreateNoteInputContext()
     const toggleShowCreateNoteInput = () => {
         setShowCreateNoteInput(prev => {

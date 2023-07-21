@@ -6,7 +6,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import { Box, TextField, Button, Typography, InputLabel, MenuItem, Select, FormControl } from "@mui/material"
+import { Box, TextField, Button, InputLabel, MenuItem, Select, FormControl } from "@mui/material"
 
 const CreateNote = ({toggle}) => {
     const {user} = useUserContext()
@@ -160,35 +160,3 @@ const CreateNote = ({toggle}) => {
   )
 }
 export default CreateNote
-            {/* <label htmlFor="title"></label>
-            <input 
-                type="text" 
-                name="title" 
-                id="title" 
-                placeholder="title"
-                value={noteData.title}
-                onChange={getNoteData}
-            />
-            <label htmlFor="content"></label>
-            <input 
-                type="text" 
-                name="content" 
-                id="content" 
-                placeholder="content"
-                value={noteData.content}
-                onChange={getNoteData}
-            />
-            <label htmlFor="category"></label>
-            <select 
-                name="category" 
-                id="category"
-                value={noteData.category}
-                onChange={getNoteData}
-            >
-                <option value="">Category</option>
-                <option value="Study">Study</option>
-                <option value="Home">Home</option>
-                <option value="Work">Work</option>
-                <option value="Personal">Personal</option>
-            </select> */}
-            {/* <button onClick={}>Create note</button> */}

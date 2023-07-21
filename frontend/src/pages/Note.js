@@ -32,7 +32,7 @@ const Note = ({id}) => {
         if(user) {
             fetchSingleNotes()
         }
-    },[dispatch, user])
+    },[dispatch, user, notes])
   return (
     <div>
         {notes && notes.map(note => {
