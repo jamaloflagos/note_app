@@ -37,6 +37,7 @@ Table of Contents
         View Notes
         Create New Note
         Edit Note
+        Share Note
         Delete Note
         Log Out
 
@@ -70,16 +71,16 @@ Create New Note
 
 To create a new note:
 
-    Click the "Create New Note" button.
+    Click the plus icon button on the top right.
     Enter the title and content for your note.
     Select a category for your note.
-    Click the "Save" button to create the note.
+    Click the "Add Note" button to create the note.
 
 Edit Note
 
 To edit an existing note:
 
-    Click the "Edit" icon (pencil) next to the note you want to edit.
+    Click the "Edit" icon (pencil) below the note you want to edit.
     Make the desired changes to the title, content, or category.
     Click the "Save" button to update the note.
 
@@ -87,14 +88,21 @@ Delete Note
 
 To delete a note:
 
-    Click the "Delete" icon (trash bin) next to the note you want to delete.
+    Click the "Delete" icon (trash bin) below the note you want to delete.
     Confirm the action in the pop-up dialog.
+
+Share Note
+
+To share a note:
+
+    Click the checkbox button next to the note you want to share.
+    Click the share icon bo=utton that pops up under the note.
 
 Log Out
 
 To log out of your account:
 
-    Click on your profile picture or name in the top-right corner.
+    Click the "Logout" button in between the plus icon and your propfile picture.
     Select "Log Out" from the drop-down menu.
 
 3. Categories
