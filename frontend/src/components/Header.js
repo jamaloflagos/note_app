@@ -1,7 +1,7 @@
 import { useUserContext } from "../hooks/useUserContext"
 import CreateNote from "./CreateNote"
-
-import { Box, Typography } from "@mui/material"
+import { useLogout } from "../hooks/useLogout";
+import { Box, Typography, Button } from "@mui/material"
 import { Add } from '@mui/icons-material';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -12,6 +12,7 @@ import { useCreateNoteInputContext } from "../hooks/useCreateNoteInputContext";
 
 
 const Header = () => {
+    const {logout} = useLogout()
     const {user} = useUserContext()
     // const [showCreateNoteInput, setShowCreateNoteInput] = useState(false)
     const {showCreateNoteInput, setShowCreateNoteInput} = useCreateNoteInputContext()
@@ -19,6 +20,10 @@ const Header = () => {
         setShowCreateNoteInput(prev => {
             return !prev
         } )
+    }
+
+    const logoutUser = () => {
+        logout()
     }
     return (
         <header>
@@ -58,6 +63,17 @@ const Header = () => {
                     {user.name}
                 </Typography>
             </Box>
+            <Button 
+                variant="contained" 
+                onClick={logoutUser}
+                size="small"
+                color="error"
+                sx={{
+                    // display: "block",
+                    // margin: "20px auto",
+                    width: 100
+                }}
+            >Logout</Button>
             <Add color="primary" size="large" onClick={toggleShowCreateNoteInput}/>
         </Box>
         {showCreateNoteInput && <CreateNote />}
