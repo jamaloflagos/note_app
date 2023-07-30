@@ -52,7 +52,7 @@ const CreateNote = ({toggle}) => {
             return
         }
 
-        const response = await fetch("/note/create", {
+        const response = await fetch("https://note-app-backend-rouge.vercel.app/note/create", {
             method: "POST",
             body: JSON.stringify(noteData),
             headers: {
