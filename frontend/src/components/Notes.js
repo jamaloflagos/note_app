@@ -34,8 +34,7 @@ const Notes = ({title, content, createdAt, _id, updatedAt, category}) => {
     const formattedDate = format(parsedDate, "MMMM d, yyyy");
 
     const storeSingleNoteId = () => {
-  localStorage.setItem('noteId', JSON.stringify(_id))
-
+        localStorage.setItem('noteId', JSON.stringify(_id))
     }
   const deleteNote = async () => {
     if(!user) {

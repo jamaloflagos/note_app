@@ -24,6 +24,7 @@ export const UserContextProvider = ({children}) => {
         user: null
     })
 
+    // to keep user loggedin after refresh
     useEffect(()=> {
         const user = JSON.parse(localStorage.getItem("user"))
     

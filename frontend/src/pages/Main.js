@@ -28,6 +28,8 @@ const Main = () => {
 
             if(response.ok) {
                 dispatch({type: "FETCH_NOTES", payload: data})
+                console.log(data, "in main");
+    
             }
         }
 

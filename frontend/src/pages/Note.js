@@ -1,46 +1,43 @@
 import { useEffect } from "react"
 import { useNoteContext } from "../hooks/useNoteContext"
 import { useUserContext } from "../hooks/useUserContext"
-const Note = ({id}) => {
+const Note = () => {
     const {dispatch, notes} = useNoteContext()
     const {user} = useUserContext()
+    const _id = JSON.parse(localStorage.getItem("noteId"))            
+    console.log(_id, "in note");
     useEffect( () => {
         const fetchSingleNotes = async () => {
-            const _id = JSON.parse(localStorage.getItem("noteId"))            
             const response = await fetch(`/note/${_id}`, {
                 headers: {
                     "Authorization": `Bearer ${user.token}`
                 }
             })
-            console.log(response);
             
             if(response.ok) {
                 const data = await response.json()
                 dispatch({type: "FETCH_SINGLE_NOTE", payload: data})
                 console.log(data);
-                
             }
 
             if(!response.ok) {
                 throw Error("Server side error")
             }
-            
         }
         
-        console.log(notes);
-        
+        console.log(notes, "in note");        
         if(user) {
             fetchSingleNotes()
         }
-    },[dispatch, user, notes])
+    },[dispatch, user, _id])
   return (
     <div>
-        {notes && notes.map(note => {
-            return <div>
-                <h1>{note.title}</h1>
-                {console.log(note)}
-            </div>
-        })}
+        {notes.map(note => {
+                return <div key={note._id}>
+                    <h1>{note.title}</h1>
+                    <p>{note.content}</p>
+                </div>
+            })}
 
         <h1>Note</h1>
         {/* {notes && <h1>{notes.title}</h1>} */}
