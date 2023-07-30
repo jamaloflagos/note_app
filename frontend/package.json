@@ -1,5 +1,5 @@
 {
-  "proxy": "https://note-app-backend-1kv3.onrender.com",
+  "proxy": "https://note-app-backend-rouge.vercel.app",
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
