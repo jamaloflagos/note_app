@@ -14,7 +14,7 @@ const Main = () => {
 
     useEffect(() => {
         const fetchNotes = async () => {
-            const response = await fetch("/note", {
+            const response = await fetch("https://note-app-backend-rouge.vercel.app/note", {
                 headers: {
                     "Authorization": `Bearer ${user.token}`
                 }

@@ -34,7 +34,7 @@ const EditNote = ({ShowEditInput, id, editTitle, editContent, editCategory}) => 
             return
         }
 
-        const response = await fetch(`/note/${id}`, {
+        const response = await fetch(`https://note-app-backend-rouge.vercel.app/note/${id}`, {
             method: "PATCH",
             body: JSON.stringify(noteData),
             headers: {

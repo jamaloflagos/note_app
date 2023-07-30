@@ -8,7 +8,7 @@ const Note = () => {
     console.log(_id, "in note");
     useEffect( () => {
         const fetchSingleNotes = async () => {
-            const response = await fetch(`/note/${_id}`, {
+            const response = await fetch(`https://note-app-backend-rouge.vercel.app/note/${_id}`, {
                 headers: {
                     "Authorization": `Bearer ${user.token}`
                 }

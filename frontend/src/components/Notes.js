@@ -40,7 +40,7 @@ const Notes = ({title, content, createdAt, _id, updatedAt, category}) => {
     if(!user) {
       return
     }
-    const response = await fetch(`/note/${_id}`, {
+    const response = await fetch(`https://note-app-backend-rouge.vercel.app/note/${_id}`, {
       method: "DELETE",
       headers: {
         "Authorization": `Bearer ${user.token}`

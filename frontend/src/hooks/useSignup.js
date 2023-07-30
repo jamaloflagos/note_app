@@ -11,7 +11,7 @@ export const useSignup =  () => {
     setError(null)
     setIsLoading(true)
 
-    const response = await fetch("/user/signup", {
+    const response = await fetch("https://note-app-backend-rouge.vercel.app/user/signup", {
         method: "POST", 
         headers: {
             "Content-Type": "application/json"
