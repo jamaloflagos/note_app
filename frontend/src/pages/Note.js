@@ -25,7 +25,7 @@ const Note = () => {
             }
         }
         
-        console.log(notes, "in note");        
+        console.log(notes[0], "in note");        
         if(user) {
             fetchSingleNotes()
         }
