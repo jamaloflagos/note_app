@@ -32,7 +32,7 @@ const Note = () => {
     },[dispatch, user, _id])
   return (
     <div>
-        {notes.map(note => {
+        {notes && notes.map(note => {
                 return <div key={note._id}>
                     <h1>{note.title}</h1>
                     <p>{note.content}</p>
