@@ -16,7 +16,7 @@ const Main = () => {
     const [notesPerPage] = useState(10);
     const lastIndex = currentPage * notesPerPage;
     const firstIndex = lastIndex - notesPerPage;
-    const currentNotes = notes.slice(firstIndex, lastIndex);
+    const currentNotes = notes ? notes.slice(firstIndex, lastIndex) : notes
 
     const paginate = (number) => {
         setCurrentPage(number);
