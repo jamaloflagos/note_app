@@ -19,7 +19,7 @@ const Signup = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    const {signup} = useSignup()
+    const { signup } = useSignup()
 
     // const getUSerInfo = (e) => {
     //     const {name, value} = e.target

@@ -52,7 +52,7 @@ const CreateNote = ({toggle}) => {
             return
         }
 
-        const response = await fetch("https://note-app-backend-rouge.vercel.app/note/create", {
+        const res = await fetch("https://note-app-backend-rouge.vercel.app/note/create", {
             method: "POST",
             body: JSON.stringify(noteData),
             headers: {
@@ -61,16 +61,16 @@ const CreateNote = ({toggle}) => {
             }
         })
 
-        const data = await response.json()
-        const error = data.error 
         console.log(error)
-
-        if(!response.ok) {
-            setError(error)
+        
+        if(!res.ok) {
+            const error = await res.json()
+            setError(error.message)
             // throw Error("Server side error")
         }
-
-        if(response.ok) {
+        
+        if(res.ok) {
+            const data = await res.json()
             // setNoteData({
             //     name: "",
             //     phone_num: "",

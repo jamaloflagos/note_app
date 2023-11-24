@@ -8,10 +8,6 @@ const noteReducer = (state, action) => {
             return {
                 notes: action.payload
             }
-            case "FETCH_SINGLE_NOTE":
-                return {
-                    notes: [action.payload.note]
-                }
         case "CREATE_NOTE": 
             return {
                 notes: [action.payload, ...state.notes]

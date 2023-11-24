@@ -34,7 +34,7 @@ const EditNote = ({ShowEditInput, id, editTitle, editContent, editCategory}) => 
             return
         }
 
-        const response = await fetch(`https://note-app-backend-rouge.vercel.app/note/${id}`, {
+        const res = await fetch(`https://note-app-backend-rouge.vercel.app/note/${id}`, {
             method: "PATCH",
             body: JSON.stringify(noteData),
             headers: {
@@ -43,15 +43,15 @@ const EditNote = ({ShowEditInput, id, editTitle, editContent, editCategory}) => 
             }
         })
 
-        const data = await response.json()
-        const error = data.error 
         console.log(error)
-
-        if(!response.ok) {
-            // setError(error)
+        
+        if(!res.ok) {
+            const error = await res.json()
+            setError(error.message)
         }
-
-        if(response.ok) {
+        
+        if(res.ok) {
+            const data = await res.json()
            
             dispatch({type: "EDIT_NOTE", payload: data})
             ShowEditInput()

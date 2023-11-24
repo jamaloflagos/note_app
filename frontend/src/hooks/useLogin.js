@@ -11,7 +11,7 @@ export const useLogin =  () => {
     setError(null)
     setIsLoading(true)
 
-    const response = await fetch("https://note-app-backend-rouge.vercel.app/user/login", {
+    const res = await fetch("https://note-app-backend-rouge.vercel.app/user/login", {
         method: "POST", 
         headers: {
             "Content-Type": "application/json"
@@ -19,16 +19,17 @@ export const useLogin =  () => {
         body: JSON.stringify({email, password}),
     })
 
-    const data = await response.json()
-
-    if(!response.ok) {
-        setError(data.error)
+    
+    if(!res.ok) {
+        const error = await res.json()
+        setError(error.message)
         setIsLoading(false)
         console.log(data.error);
         
     }
-
-    if(response.ok) {
+    
+    if(res.ok) {
+        const data = await res.json()
         localStorage.setItem('user', JSON.stringify(data))
         setIsLoading(false)
         dispatch({type: "LOGIN", payload: data})

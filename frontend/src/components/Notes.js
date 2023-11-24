@@ -19,12 +19,14 @@ const Notes = ({title, content, createdAt, _id, updatedAt, category}) => {
         })
 
     }
+
     const toggleShowEditInput = () => {
         setShowEditInput(prev => {
             return !prev
         })
 
     }
+
     console.log(createdAt, "createdAt");
     console.log(updatedAt, "updatedAt");
     const date = ShowEditInput ? updatedAt : createdAt
@@ -33,13 +35,11 @@ const Notes = ({title, content, createdAt, _id, updatedAt, category}) => {
     
     const formattedDate = format(parsedDate, "MMMM d, yyyy");
 
-    const storeSingleNoteId = () => {
-        localStorage.setItem('noteId', JSON.stringify(_id))
+    const deleteNote = async() => {
+        if(!user) {
+        return
     }
-  const deleteNote = async () => {
-    if(!user) {
-      return
-    }
+
     const response = await fetch(`https://note-app-backend-rouge.vercel.app/note/${_id}`, {
       method: "DELETE",
       headers: {
@@ -54,16 +54,8 @@ const Notes = ({title, content, createdAt, _id, updatedAt, category}) => {
     if(response.ok) {
         const data = await response.json()
         dispatch({type: "DELETE_NOTE", payload: data})
-
     }
-
-    // try {
-    //     const data = await response.json()
-    //     dispatch({type: "DELETE_NOTE", payload: data})
-    // } catch (error) {
-    //     console.log(error)
-    // }
-
+    
   }
 
 
@@ -87,7 +79,6 @@ const Notes = ({title, content, createdAt, _id, updatedAt, category}) => {
                 <Box>
                     <Link 
                         to={`/note/${_id}`}
-                        onClick={storeSingleNoteId}
                         style={{
                             textDecoration: "none",
                             color: "inherit"
